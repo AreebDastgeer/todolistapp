@@ -84,11 +84,14 @@ function Homepage() {
                     <div className=''> Summer Coding Challenge
                     </div>
                     <div className='flex gap-2'>
-                        <div className=''>
-                            <IoMdNotificationsOutline size={20} />
+                        <div className='m-1'>
+                            <IoMdNotificationsOutline size={25} />
+                        </div>
+                        <div className='m-1'>
+                            <IoMdHelpCircleOutline size={25} />
                         </div>
                         <div>
-                            <IoMdHelpCircleOutline size={20} />
+                        <Image className='rounded-full ' src="/assets/profile.png" alt='Profile Picture' width={40} height={40} />
                         </div>
                     </div>
                 </div>
@@ -96,7 +99,7 @@ function Homepage() {
                     <div className='text-desert flex justify-between  gap-2 p-4 '>
 
                         <div className='flex gap-2 pt-4'>
-                            <IoMdCalendar size={20} />
+                            <IoMdCalendar size={25} />
                             To Do
                         </div>
                         <div className='flex '>
@@ -104,10 +107,10 @@ function Homepage() {
                                 <SearchBar />
                             </div>
                             <div className='p-2'>
-                                <IoMdNotifications size={20} />
+                                <IoMdNotifications size={25} />
                             </div>
                             <div className='p-2'>
-                                <IoIosSettings size={20} />
+                                <IoIosSettings size={25} />
                             </div>
                         </div>
                     </div>
