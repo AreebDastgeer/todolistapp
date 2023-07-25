@@ -172,7 +172,7 @@ function Homepage() {
 Add Tags like exercise , work etc
 </div>
 <div className='text-end'>
-<button class="rounded-lg bg-desert w-16 h-8 text-center text-sm text-cream items-end m-2 px-4 py-1 hover:bg-cream hover:text-coral">
+<button className="rounded-lg bg-desert w-16 h-8 text-center text-sm text-cream items-end m-2 px-4 py-1 hover:bg-cream hover:text-coral">
   Save
 </button>
 </div>
