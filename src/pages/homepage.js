@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import React, { useState } from "react";
+import { useRouter } from 'next/router';
 import { Priority } from '@/components/priority';
 import { Label } from '@/components/label';
 import { SearchBar } from '../components/searchbar';
@@ -22,7 +23,10 @@ import { Attachment } from '@/components/attachment';
 const inter = Inter({ subsets: ['latin'] })
 
 function Homepage() {
-   
+    const router = useRouter();
+    const handleLogout = () => {
+        router.push('/login');
+    };
     return (
         <div className='flex flex-row space-x-2 p-2 '>
             <div className='rounded-2xl bg-cream h-[30rem] w-48 '>
@@ -67,7 +71,7 @@ function Homepage() {
                         </div>
                     </div>
                 </div>
-                <div className='text-desert  text-center top-96 mt-48 px-7 flex  flex-row flex-wrap space-x-2 cursor-pointer p-1 hover:bg-desert hover:text-cream'>
+                <div className='text-desert  text-center top-96 mt-48 px-7 flex  flex-row flex-wrap space-x-2 cursor-pointer p-1 hover:bg-desert hover:text-cream' onClick={handleLogout}>
                     <div >
                         <IoIosLogOut />
                     </div>
@@ -127,7 +131,8 @@ function Homepage() {
                                 {/* {/* <div className='bg-coral row-span-2 m-4 rounded-2xl '> */}
                                 
                                     <div className='m-2'>
-                                 <textarea className='   p-5 m-1 w-full h-24 resize-none outline-none rounded-lg  drop-shadow-md text-cream bg-coral text-sm placeholder-cream'  placeholder="Add Description">
+                                 <textarea className='   p-5 m-1 w-full h-24 resize-none outline-none rounded-lg  drop-shadow-md text-cream bg-coral text-sm placeholder-cream hide-scrollbar' 
+                                  placeholder="Add Description">
                                  </textarea>
                                  </div>
                                
