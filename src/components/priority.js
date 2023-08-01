@@ -9,7 +9,7 @@ const Priority = () => {
 
   return (
     <>
-    <div className='flex flex-row flex-wrap gap-2'>
+    <div className='flex flex-col md:flex-row flex-wrap gap-2 '>
       <button
         className={`rounded-full text-sm font-bold text-center px-1 py-0.5 h-6 w-12 border-2 ${
           priority === 'low' ? 'bg-desert text-white' : 'border-cream text-cream'

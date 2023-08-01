@@ -38,7 +38,7 @@ export default function Login() {
       <Head>
         <title>Login</title>
       </Head>
-      <div className="max-w-md w-full   bg-peach p-6 rounded-lg shadow-lg">
+      <div className="max-w-md w-full h-96  bg-peach p-6 md:rounded-lg shadow-lg">
         <h2 className="text-3xl text-center font-bold mb-6">Welcome Back</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -72,7 +72,7 @@ export default function Login() {
           <div className='flex flex-row m-2'>
             <Checkbox />
             <div>Remember me</div>
-            
+
           </div>
           <button
             type="submit"

@@ -37,7 +37,7 @@ const Attachment = () => {
   return (
     <div className='flex flex-col gap-4 text-desert text-md font-semibold items-center'>
       <div
-        className="relative border-2 border-dashed rounded-lg border-gray-300 p-4 w-44 text-center cursor-pointer"
+        className="relative border-2 border-dashed rounded-lg border-gray-300 p-4 w-28 md:w-44 text-center cursor-pointer"
         onDragOver={handleDragOver}
         onDrop={handleDrop}
       >
@@ -59,7 +59,7 @@ const Attachment = () => {
         <div className="flex flex-col gap-2">
           <h3>Attachments:</h3>
           {attachments.map((file, index) => (
-            <div key={index} className="flex items-center gap-2">
+            <div key={index} className="flex items-center flex-col md:flex-row gap-2">
               <span>{file.name}</span>
               <button
                 className="bg-desert text-cream px-2 py-1 rounded hover:bg-cream hover:text-desert"

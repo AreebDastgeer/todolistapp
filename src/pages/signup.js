@@ -42,7 +42,7 @@ export default function SignUp() {
             </Head>
             <h1 className=" flex justify-center m-4 font-extrabold text-2xl">Sign Up</h1>
             <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
-                <div className="mb-4">
+                <div className="m-2 md:m-0 mb-4">
                     <label className="block mb-2 font-semibold">Email</label>
                     <input
                         type="email"
@@ -53,7 +53,7 @@ export default function SignUp() {
                         className="w-full p-2 border border-coral rounded-lg outline-desert"
                     />
                 </div>
-                <div className="mb-4 relative">
+                <div className="m-2 md:m-0 mb-4 relative">
                     <label className="block mb-2 font-semibold">Password  (6 min characters) </label>
                     <input
                         type={showPassword ? 'text' : 'password'}
@@ -70,7 +70,7 @@ export default function SignUp() {
                         {showPassword ? <FiEye size={20} /> : <FiEyeOff size={20} />}
                     </span>
                 </div>
-                <div className="mb-4">
+                <div className="m-2 md:m-0 mb-4">
                     <label className="block mb-2 font-semibold">Confirm Password</label>
                     <input
                         type="password"

@@ -1,20 +1,14 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import React, { useState } from "react";
-import { useRouter } from 'next/router';
+import React from "react";
 import { Priority } from '@/components/priority';
 import { Label } from '@/components/label';
 import { SearchBar } from '../components/searchbar';
 import { OnOffButton } from '@/components/onoffbutton';
-
-import { SiApachenetbeanside } from "react-icons/si";
-import { TfiViewGrid } from "react-icons/tfi";
-import { TfiServer } from "react-icons/tfi";
-import { RiLayout5Line } from "react-icons/ri";
-import { IoIosSettings } from "react-icons/io";
-import { IoIosLogOut } from "react-icons/io";
+import { Sidenav } from '@/components/sidenav';
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoMdHelpCircleOutline } from "react-icons/io";
+import { IoIosSettings } from "react-icons/io";
 import { IoMdCalendar } from "react-icons/io";
 import { IoMdNotifications } from "react-icons/io";
 import { IoIosAddCircleOutline } from "react-icons/io";
@@ -23,66 +17,10 @@ import { Attachment } from '@/components/attachment';
 const inter = Inter({ subsets: ['latin'] })
 
 function Homepage() {
-    const router = useRouter();
-    const handleLogout = () => {
-        router.push('/login');
-    };
     return (
-        <div className='flex flex-row space-x-2 p-2 '>
-            <div className='rounded-2xl bg-cream h-[30rem] w-48 '>
-                <div className='flex  flex-row flex-wrap space-x-2 p-6 px-10 text-desert  text-center'>
-                    <div className='w-3' >
-                        <b><SiApachenetbeanside /> </b>
-                    </div>
-                    <div className='tracking-wide'> <b>My Stack</b>
-                    </div>
-                </div>
-                <div className='space-y-2 cursor-pointer'>
-                    <div className='text-desert  text-center px-7  h-8 top-28 flex  flex-row flex-wrap space-x-2 p-1 hover:bg-peach' >
-                        <div >
-                            <TfiViewGrid />
-                        </div>
-                        <div>
-                            Courses
-                        </div>
-                    </div>
-                    <div className='text-desert  text-center h-8 pl-7 flex flex-row flex-wrap space-x-2 p-1 hover:bg-peach'>
-                        <div>
-                            <RiLayout5Line />
-                        </div>
-                        <div>
-                            Summer Coding
-                        </div>
-                    </div>
-                    <div className='text-desert  text-center h-8 top-60 px-7 flex  flex-row flex-wrap space-x-2 p-1 hover:bg-peach'>
-                        <div>
-                            <TfiServer />
-                        </div>
-                        <div >
-                            Data Science
-                        </div>
-                    </div>
-                    <div className='text-desert  text-center h-8 top-60 px-7 flex  flex-row flex-wrap space-x-2 p-1 hover:bg-peach'>
-                        <div>
-                            <IoIosSettings size={20} />
-                        </div>
-                        <div >
-                            Settings
-                        </div>
-                    </div>
-                </div>
-                <div className='text-desert  text-center top-96 mt-48 px-7 flex  flex-row flex-wrap space-x-2 cursor-pointer p-1 hover:bg-desert hover:text-cream' onClick={handleLogout}>
-                    <div >
-                        <IoIosLogOut />
-                    </div>
-                    <div>
-                        Log Out
-                    </div>
-                </div>
-            </div>
-
-
-            <div className='rounded-2xl bg-cream h-[30rem] w-[55rem] '>
+        <div className='flex flex-row space-x-2 p-2 min-h-full '>
+            <Sidenav />
+            <div className='rounded-2xl bg-cream h-[37rem] min-[375px]:h-[31.5rem] min-[425px]:h-[28rem] md:h-[46.5rem] xl:h-[67rem] w-[55rem] xl:w-[80rem]'>
 
                 <div className='flex justify-between text-desert p-4'>
                     <div className=''> Summer Coding Challenge
@@ -95,7 +33,7 @@ function Homepage() {
                             <IoMdHelpCircleOutline size={25} />
                         </div>
                         <div>
-                        <Image className='rounded-full ' src="/assets/profile.png" alt='Profile Picture' width={40} height={40} />
+                            <Image className='rounded-full ' src="/assets/profile.png" alt='Profile Picture' width={40} height={40} />
                         </div>
                     </div>
                 </div>
@@ -118,29 +56,27 @@ function Homepage() {
                             </div>
                         </div>
                     </div>
-                    <div className='row-span-6 grid grid-cols-3 grid-flow-col '>
-                        <div className='rounded-2xl col-span-2 grid grid-cols-2 h-[21rem] bg-cream border-2 border-peach m-2 mb-5'>
-                            <div className='bg-peach m-2 h-[19.5rem] rounded-2xl overflow-y-auto hide-scrollbar'>
+                    <div className='row-span-6 grid grid-cols-2 lg:grid-cols-3 grid-flow-col '>
+                        <div className='rounded-2xl col-span-2 h-[25.5rem] min-[375px]:h-[20rem] min-[425px]:h-[17rem] md:h-[36rem] xl:h-[56.5rem] md:w-80 lg:w-[550px] xl:w-[50rem] grid grid-col-1 lg:grid-cols-2  bg-cream border-2 border-peach m-1 mt-2 md:m-2 mb-5'>
+                            <div className='bg-peach m-1 md:m-2 lg:h-[18 rem]  rounded-2xl overflow-y-auto hide-scrollbar'>
                                 <div className='text-desert p-2 font-bold'>
                                     To Do List
                                 </div>
                                 <Label />
 
                             </div>
-                            <div className='bg-peach h-[19.5rem] m-2 rounded-2xl grid  overflow-y-auto hide-scrollbar '>
-                                {/* {/* <div className='bg-coral row-span-2 m-4 rounded-2xl '> */}
-                                
-                                    <div className='m-2'>
-                                 <textarea className='   p-5 m-1 w-full h-24 resize-none outline-none rounded-lg  drop-shadow-md text-cream bg-coral text-sm placeholder-cream hide-scrollbar' 
-                                  placeholder="Add Description">
-                                 </textarea>
-                                 </div>
-                               
-                                <div className='flex flex-wrap gap-2 m-2'>
+                            <div className='bg-peach lg:h-[18 rem] m-2 rounded-2xl grid  overflow-y-auto overflow-x-hidden hide-scrollbar '>
+
+                                <div className='m-1'>
+                                    <textarea className='   p-5 m-1 md:m-1.5 h-24 w-[9rem] md:w-[17rem] lg:w-[14.5rem] xl:w-[22.5rem] resize-none outline-none rounded-lg  drop-shadow-md text-cream bg-coral text-sm placeholder-cream hide-scrollbar'
+                                        placeholder='Add Description'>
+                                    </textarea>
+                                </div>
+
+                                <div className='flex flex-wrap gap-2 m-1'>
                                     <div className='flex flex-row mt-2 gap-0.5 text-desert text-md font-semibold'>
                                         Priority
-                                    
-                                    <Priority />
+                                        <Priority />
                                     </div>
                                     <div className='text-desert text-md font-semibold'>
                                         Repeat Every
@@ -153,46 +89,44 @@ function Homepage() {
                                     </button>
                                 </div>
                                 <div className='flex flex-col m-2 gap-1'>
-                               
+
                                     <div className='flex flex-row gap-2 text-desert text-md  font-semibold'>
                                         Add Attachment
-                                  
+
                                         <IoIosAddCircleOutline size={20} />
 
-                                       
+
                                     </div>
                                     <Attachment />
                                     <div className='flex flex-row gap-2 text-desert text-md m-0.5 mt-1 font-semibold'>
                                         Add Location
-                                    
-                                    <IoIosPin size={20}/>
+
+                                        <IoIosPin size={20} />
                                     </div>
                                     <div className='flex flex-row gap-2 text-desert text-md m-0.5 mt-1 font-semibold'>
                                         Make Habit
-                                    
-                                    <OnOffButton />
+
+                                        <OnOffButton />
                                     </div>
                                 </div>
-<div className='h-8 m-3 p-1 rounded-lg text-sm text-cream bg-coral'>
-Add Tags like exercise , work etc
-</div>
-<div className='text-end'>
-<button className="rounded-lg bg-desert w-16 h-8 text-center text-sm text-cream items-end m-2 px-4 py-1 hover:bg-cream hover:text-coral">
-  Save
-</button>
-</div>
+                                <textarea className='h-8 xl:h-[3rem] m-3 p-1 w-[8.5rem] md:w-[17rem] lg:w-[14.5rem] xl:w-[22.5rem] rounded-lg text-sm text-cream bg-coral resize-none outline-none hide-scrollbar placeholder:text-cream' placeholder=' Add Tags like exercise , work etc'>
+                                   
+                                </textarea>
+                                <div className='text-center md:text-end'>
+                                    <button className="rounded-lg bg-desert w-16 h-8 text-center text-sm text-cream items-end m-2 px-4 py-1 hover:bg-cream hover:text-coral">
+                                        Save
+                                    </button>
+                                </div>
 
                             </div>
                         </div>
-                        <div className='rounded-2xl m-2 mb-5 bg-peach grid grid-rows-6'>
-                            <div className='text-center m-2 text-desert'>
+                        <div className='rounded-2xl m-2 mb-5 md:mt-4  lg:ml-4 xl:ml-0 min-[1088px]:w-[16.5rem] xl:w-[24rem] min-[1088px]:ml-0 bg-peach  md:h-[35.15rem] xl:h-[56rem] md:w-64 lg:w-[15.5rem] grid grid-rows-6'>
+                            <div className='text-center m-2 text-desert font-semibold'>
                                 Quote
                             </div>
-                            <div className='bg-coral rounded-2xl m-2 row-span-5 mb-10 h-24 '>
-                                <div className='text-cream  m-3 mt-6 font-mono'>
-                                    -Life Goes On...
-                                </div>
-                            </div>
+                            <textarea className='bg-coral rounded-2xl m-2 row-span-5 mb-10 h-24 w-[9rem] md:w-[15rem] lg:w-[14.5rem] xl:w-[23rem] resize-none outline-none p-2 md:p-5 font-mono placeholder:text-cream' placeholder=' -Life Goes On...'>
+                           
+                            </textarea>
                         </div>
 
                     </div>
