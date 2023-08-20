@@ -44,7 +44,7 @@ function Homepage() {
                             <IoMdHelpCircleOutline size={25} />
                         </div>
                         <div>
-                            <Image className='rounded-full ' src="/assets/profile.png" alt='Profile Picture' width={40} height={40} />
+                            <Image  className='rounded-full ' src='/profile.png ' alt=' None' width={40} height={40} />
                         </div>
                     </div>
                 </div>
