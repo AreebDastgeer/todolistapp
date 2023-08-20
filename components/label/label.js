@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Checkbox } from './checkbox';
+import { Checkbox } from '../checkbox/checkbox'; 
 
 const Label = () => {
     const [isChecked, setIsChecked] = useState(false);

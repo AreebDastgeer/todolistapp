@@ -1,14 +1,22 @@
+"use client"
+import {signIn, useSession } from "next-auth/react";
 import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+import { Signingoogle } from "@/components/signingoogle/signingoogle";
 import Head from 'next/head';
 import { SlSocialGoogle } from "react-icons/sl";
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 
+
 export default function SignUp() {
 
     const redirectToLoginPage = () => {
-        router.push('/login'); // Replace 'login' with the actual route to the login page
+        router.push('/login'); 
+    };
+    const {status } = useSession();
+    const handleOnClick = () => {
+        signIn("google");
     };
     const [formData, setFormData] = useState({
         email: '',
@@ -36,12 +44,15 @@ export default function SignUp() {
     };
 
     return (
+        <>
         <div className='text-desert'>
+       {status !== "authenticated" ? (
+            <>
             <Head >
                 <title >Sign Up</title>
             </Head>
             <h1 className=" flex justify-center m-4 font-extrabold text-2xl">Sign Up</h1>
-            <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
+            <div onSubmit={handleSubmit} className="max-w-sm mx-auto">
                 <div className="m-2 md:m-0 mb-4">
                     <label className="block mb-2 font-semibold">Email</label>
                     <input
@@ -90,11 +101,7 @@ export default function SignUp() {
                     <hr />
                 </div>
 
-                <button type="submit" className=" flex flex-row gap-2 justify-center text-center w-80 p-3 border border-coral text-desert bg-cream rounded-full hover:bg-desert hover:text-cream m-4 drop-shadow-lg hover:drop-shadow-2xl">
-                    Sign up with Google
-                    <SlSocialGoogle size={25} />
-                </button>
-
+                <Signingoogle />
                 <div className='flex-flex-row gap-2 text-center'>
                     Already have an account?
 
@@ -102,7 +109,13 @@ export default function SignUp() {
                         Log In
                     </button>
                 </div>
-            </form>
-        </div>
+            </div>
+            </>
+            ) : 
+            router.push("/homepage")
+          }
+        
+      </div>
+      </>
     );
 }

@@ -1,11 +1,14 @@
+"use client"
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import React from "react";
-import { Priority } from '@/components/priority';
-import { Label } from '@/components/label';
-import { SearchBar } from '../components/searchbar';
-import { OnOffButton } from '@/components/onoffbutton';
-import { Sidenav } from '@/components/sidenav';
+import { useRouter } from 'next/navigation';
+import { Priority } from '@/components/priority/priority';
+import { Label } from '@/components/label/label';
+import { SearchBar } from '@/components/searchbar/searchbar';
+import { OnOffButton } from '@/components/onoffbutton/onoffbutton';
+import { Attachment } from '@/components/attachment/attachment';
+import { Sidenav } from '@/components/sidenav/sidenav';
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoMdHelpCircleOutline } from "react-icons/io";
 import { IoIosSettings } from "react-icons/io";
@@ -13,17 +16,25 @@ import { IoMdCalendar } from "react-icons/io";
 import { IoMdNotifications } from "react-icons/io";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoIosPin } from "react-icons/io";
-import { Attachment } from '@/components/attachment';
+import { FiMenu } from 'react-icons/fi';
 const inter = Inter({ subsets: ['latin'] })
 
 function Homepage() {
+    const [showSidenav, setShowSidenav] = React.useState(false);
+    const toggleSidenav = () => {
+        setShowSidenav(!showSidenav);
+    };
+    
     return (
         <div className='flex flex-row space-x-2 p-2 min-h-full '>
-            <Sidenav />
+        <div className='max-[475px]:hidden '>
+            <Sidenav isOpen={showSidenav}/>
+            </div>
             <div className='rounded-2xl bg-cream h-[37rem] min-[375px]:h-[31.5rem] min-[425px]:h-[28rem] md:h-[46.5rem] xl:h-[67rem] w-[55rem] xl:w-[80rem]'>
-
-                <div className='flex justify-between text-desert p-4'>
-                    <div className=''> Summer Coding Challenge
+            <div className='flex justify-between text-desert p-4'>
+                    <div className=' items-center flex'>
+                        <FiMenu size={25} className='cursor-pointer md:hidden' onClick={toggleSidenav} />
+                        <span className='ml-2'>Summer Coding Challenge</span>
                     </div>
                     <div className='flex gap-2'>
                         <div className='m-1'>
@@ -39,7 +50,6 @@ function Homepage() {
                 </div>
                 <div className='grid grid-rows-7  divide-y divide-desert'>
                     <div className='text-desert flex justify-between  gap-2 p-4 '>
-
                         <div className='flex gap-2 pt-4'>
                             <IoMdCalendar size={25} />
                             To Do

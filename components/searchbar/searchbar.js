@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from 'react-icons/ai';
-const SearchBar = () => {
+function SearchBar() {
   const [borderColor, setBorderColor] = useState('border-peach');
 
   const handleFocus = () => {

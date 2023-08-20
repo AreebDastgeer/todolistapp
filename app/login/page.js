@@ -1,9 +1,9 @@
-// pages/login.js
+"use client"
 import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
-import { Checkbox } from '@/components/checkbox';
+import { Checkbox } from '@/components/checkbox/checkbox';
 
 export default function Login() {
   const [formData, setFormData] = useState({

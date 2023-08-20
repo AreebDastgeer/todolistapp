@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { SiApachenetbeanside } from "react-icons/si";
 import { TfiViewGrid } from "react-icons/tfi";
 import { TfiServer } from "react-icons/tfi";
 import { RiLayout5Line } from "react-icons/ri";
 import { IoIosSettings } from "react-icons/io";
 import { IoIosLogOut } from "react-icons/io";
-function Sidenav() {
+const Sidenav = ({ isOpen }) => {
     const router = useRouter();
     const handleLogout = () => {
         router.push('/login');
     };
     return (
+        <div className={`'translate-x-0' : '-translate-x-full'}`}>
         <div className='rounded-2xl bg-cream h-[37rem] min-[375px]:h-[31.5rem] min-[425px]:h-[28rem] md:h-[46.5rem] xl:h-[67rem] w-48 '>
             <div className='flex  flex-row flex-wrap space-x-2 p-6 px-10 mb-7 text-desert  text-center'>
                 <div className='w-3' >
@@ -62,6 +63,7 @@ function Sidenav() {
                     Log Out
                 </div>
             </div>
+        </div>
         </div>
     )
 }
