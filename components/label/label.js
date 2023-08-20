@@ -20,12 +20,12 @@ const Label = () => {
         <main>
         <div className='flex flex-col text-desert m-2'>
             <div className='rounded-lg bg-cream p-2 '>
-                <Checkbox label="Do Nothing" isChecked={isChecked} onChange={handleCheckboxChange} />
+                <Checkbox label="Fix Errors" isChecked={isChecked} onChange={handleCheckboxChange} />
                 
                 </div>
                 
                 <div className='rounded-lg bg-cream p-2 mt-2'>
-                <Checkbox label="Waste my time" isChecked={isAnotherChecked} onChange={handleAnotherCheckboxChange} />
+                <Checkbox label="Do Assignments" isChecked={isAnotherChecked} onChange={handleAnotherCheckboxChange} />
             </div>
         </div>
         <div className='text-desert p-2 font-bold'>
@@ -33,7 +33,7 @@ const Label = () => {
 </div>
 <div className='flex flex-row text-desert m-2'>
 <div className='rounded-lg bg-cream p-2 w-full'>
-<Checkbox label="I don't know" isChecked={isThirdChecked} onChange={handleThirdCheckboxChange} />
+<Checkbox label="Die Peacefully" isChecked={isThirdChecked} onChange={handleThirdCheckboxChange} />
 </div>
 </div>
 </main>

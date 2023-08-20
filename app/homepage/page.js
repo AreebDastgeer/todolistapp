@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
 import { Priority } from '@/components/priority/priority';
 import { Label } from '@/components/label/label';
@@ -20,15 +20,15 @@ import { FiMenu } from 'react-icons/fi';
 const inter = Inter({ subsets: ['latin'] })
 
 function Homepage() {
-    const [showSidenav, setShowSidenav] = React.useState(false);
+    const [showSidenav, setShowSidenav] = useState(false);
     const toggleSidenav = () => {
-        setShowSidenav(!showSidenav);
+        <Sidenav/>
     };
     
     return (
         <div className='flex flex-row space-x-2 p-2 min-h-full '>
-        <div className='max-[475px]:hidden '>
-            <Sidenav isOpen={showSidenav}/>
+        <div className={`max-[475px]:hidden ${showSidenav ? 'sidenav-open' : 'sidenav-closed'}`}>
+                <Sidenav />
             </div>
             <div className='rounded-2xl bg-cream h-[37rem] min-[375px]:h-[31.5rem] min-[425px]:h-[28rem] md:h-[46.5rem] xl:h-[67rem] w-[55rem] xl:w-[80rem]'>
             <div className='flex justify-between text-desert p-4'>

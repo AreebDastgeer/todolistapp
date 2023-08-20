@@ -6,7 +6,7 @@ import { TfiServer } from "react-icons/tfi";
 import { RiLayout5Line } from "react-icons/ri";
 import { IoIosSettings } from "react-icons/io";
 import { IoIosLogOut } from "react-icons/io";
-const Sidenav = ({ isOpen }) => {
+const Sidenav = ( ) => {
     const router = useRouter();
     const handleLogout = () => {
         router.push('/login');
